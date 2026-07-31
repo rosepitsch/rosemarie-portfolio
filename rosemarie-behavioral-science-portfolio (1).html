@@ -1,12 +1,17 @@
+
+
+Profile avatar
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rosemarie Pitsch — Behavioral Science Portfolio</title>
-  <meta name="description" content="Portfolio website for Rosemarie Pitsch, a senior behavioral scientist specializing in digital health, behavioral design, and evidence-based engagement strategy." />
+  <meta name="description" content="Portfolio website for Rosemarie Pitsch, a content designer and behavioral scientist specializing in digital health, patient and clinician engagement, and measurable behavior change." />
   <meta property="og:title" content="Rosemarie Pitsch — Behavioral Science Portfolio" />
-  <meta property="og:description" content="Senior behavioral scientist focused on digital health, choice architecture, experimentation, and patient engagement." />
+  <meta property="og:description" content="Content designer and behavioral scientist focused on digital health, patient and clinician engagement, and measurable behavior change." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://api.fontshare.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +50,7 @@
     .header-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); min-height: 4.5rem; }
     .brand { display: flex; align-items: center; gap: .85rem; font-size: var(--text-sm); font-weight: 700; letter-spacing: .03em; }
     .logo { width: 2.4rem; height: 2.4rem; color: var(--color-primary); }
+    .logo-photo { width: 2.4rem; height: 2.4rem; border-radius: 50%; object-fit: cover; object-position: center center; flex-shrink: 0; }
     .nav { display: flex; gap: var(--space-4); align-items: center; }
     .nav a { color: var(--color-text-muted); font-size: var(--text-sm); }
     .nav a:hover { color: var(--color-text); }
@@ -53,7 +59,7 @@
     .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: var(--space-8); align-items: stretch; }
     .eyebrow { display: inline-flex; align-items: center; gap: .5rem; padding: .35rem .75rem; border-radius: var(--radius-full); background: var(--color-primary-highlight); color: var(--color-primary); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; margin-bottom: var(--space-6); }
     h1, h2 { font-family: var(--font-display); line-height: 1.05; }
-    h1 { font-size: var(--text-3xl); max-width: 11ch; letter-spacing: -.03em; }
+    h1 { font-size: var(--text-3xl); max-width: 20ch; letter-spacing: -.03em; }
     .hero-copy p { margin-top: var(--space-5); max-width: 62ch; color: var(--color-text-muted); }
     .hero-actions { display: flex; gap: var(--space-3); margin-top: var(--space-8); flex-wrap: wrap; }
     .btn { display: inline-flex; align-items: center; justify-content: center; min-width: 10rem; min-height: 3rem; padding: .85rem 1.15rem; border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 700; }
@@ -64,6 +70,9 @@
     .hero-card { border-radius: var(--radius-xl); padding: var(--space-8); display: grid; grid-template-rows: auto auto 1fr; gap: var(--space-6); position: relative; overflow: hidden; }
     .hero-card::after { content: ''; position: absolute; inset: auto -20% -20% auto; width: 14rem; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 22%, transparent), transparent 68%); }
     .hero-aside { display: grid; gap: var(--space-4); }
+    .hero-byline { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-5); }
+    .hero-byline-photo { width: 3.25rem; height: 3.25rem; border-radius: 50%; object-fit: cover; object-position: center 15%; border: 2px solid var(--color-surface); box-shadow: var(--shadow-sm); flex-shrink: 0; }
+    .hero-byline .eyebrow { margin-bottom: 0; }
     .headshot-frame { border-radius: var(--radius-xl); padding: var(--space-4); background: linear-gradient(180deg, var(--color-surface), var(--color-surface-2)); }
     .headshot-placeholder { aspect-ratio: 4 / 5; border-radius: calc(var(--radius-xl) - var(--space-4)); background: linear-gradient(180deg, color-mix(in srgb, var(--color-primary) 10%, var(--color-surface-offset)), var(--color-surface-offset)); display: grid; place-items: center; overflow: hidden; position: relative; }
     .headshot-placeholder::after { content: ''; position: absolute; inset: auto 10% 6% 10%; height: 1px; background: color-mix(in srgb, var(--color-text) 10%, transparent); }
@@ -74,346 +83,11 @@
     .metric { border-radius: var(--radius-lg); padding: var(--space-4); }
     .metric strong { display: block; font-size: var(--text-xl); font-family: var(--font-display); color: var(--color-primary); }
     .metric span { color: var(--color-text-muted); font-size: var(--text-sm); }
+    .metric strong.metric-compact { font-size: var(--text-base); white-space: nowrap; }
     .section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
     .section-head { display: flex; justify-content: space-between; align-items: end; gap: var(--space-4); margin-bottom: var(--space-8); }
     .section-head p { max-width: 52ch; color: var(--color-text-muted); }
-    h2 { font-size: var(--text-2xl); letter-spacing: -.02em; }
-    .expertise-grid, .project-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: var(--space-4); }
-    .panel { border-radius: var(--radius-lg); padding: var(--space-5); background: linear-gradient(180deg, var(--color-surface), var(--color-surface-2)); }
-    .panel h3 { font-size: var(--text-lg); line-height: 1.2; margin-bottom: var(--space-3); }
-    .panel p { color: var(--color-text-muted); font-size: var(--text-sm); }
-    .timeline { display: grid; gap: var(--space-4); }
-    .timeline-item { border-radius: var(--radius-lg); padding: var(--space-6); display: grid; grid-template-columns: 14rem 1fr; gap: var(--space-6); }
-    .timeline-item time, .meta { font-size: var(--text-sm); color: var(--color-text-muted); }
-    .timeline-item h3 { font-size: var(--text-lg); margin-bottom: .35rem; }
-    .timeline-item ul { padding-left: 1rem; color: var(--color-text-muted); display: grid; gap: .55rem; }
-    .timeline-item li::marker { color: var(--color-primary); }
-    .how-grid { display: grid; gap: var(--space-4); }
-    .process-intro { color: var(--color-text-muted); max-width: 58ch; }
-    .quote { border-radius: var(--radius-xl); padding: clamp(1.75rem, 4vw, 2.5rem); display: grid; gap: var(--space-4); }
-    .quote p { font-family: var(--font-display); font-size: clamp(1.35rem, 1rem + 1vw, 2rem); line-height: 1.2; max-width: 20ch; }
-    .quote small { color: var(--color-text-muted); font-size: var(--text-sm); }
-    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: var(--space-6); }
-    .list { display: grid; gap: .75rem; color: var(--color-text-muted); }
-    .list div { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: .75rem; border-bottom: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent); }
-    .contact-card { display: grid; grid-template-columns: 1.2fr .8fr; gap: var(--space-6); align-items: stretch; }
-    .contact-links { display: grid; gap: var(--space-3); }
-    .contact-links a { padding: 1rem 1.1rem; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent); font-weight: 500; }
-    .footer { padding: var(--space-8) 0 var(--space-12); color: var(--color-text-muted); font-size: var(--text-sm); }
-    .kicker { font-size: var(--text-xs); color: var(--color-gold); letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
-    @media (max-width: 960px) {
-      .hero-grid, .about-grid, .contact-card, .timeline-item { grid-template-columns: 1fr; }
-      .expertise-grid, .project-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .nav { display: none; }
-      h1 { max-width: 100%; }
-    }
-    @media (max-width: 640px) {
-      .container { width: min(calc(100% - 1.25rem), var(--content)); }
-      .expertise-grid, .project-grid, .metric-grid { grid-template-columns: 1fr; }
-      .hero-card, .panel, .timeline-item, .quote, .headshot-frame { padding: var(--space-5); }
-      .section-head { align-items: start; flex-direction: column; }
-      .hero-actions { flex-direction: column; }
-      .btn { width: 100%; }
-    }
-  </style>
-</head>
-<body>
-  <a href="#main" class="skip-link">Skip to content</a>
-  <header class="header">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Rosemarie Pitsch home">
-        <svg class="logo" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-          <rect x="6" y="6" width="52" height="52" rx="18" stroke="currentColor" stroke-width="4"></rect>
-          <path d="M21 43V20h15.5c6 0 10 3.1 10 8.5 0 3.9-2.2 6.5-5.8 7.6L47 43h-7.4l-5.3-5.9H28V43h-7Z" fill="currentColor"></path>
-        </svg>
-        <span>Rosemarie Pitsch</span>
-      </a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#work">Work</a>
-        <a href="#results">Results</a>
-        <a href="#how-i-work">How I work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme"></button>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero container" id="top">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">Behavioral science • digital health • experimentation</div>
-          <h1>Designing evidence-based behavior change for healthcare.</h1>
-          <p>Rosemarie Pitsch is a senior behavioral scientist with an MPH in Health Behavior and more than 15 years of experience shaping digital health interventions, clinician engagement strategies, content ecosystems, and behaviorally informed product decisions.</p>
-          <p>Her work sits at the intersection of behavioral insight, patient and clinician experience, experimentation, and content strategy—translating complex health decisions into clear actions that improve outcomes.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:rosemariepitsch@gmail.com">Contact Rosemarie</a>
-            <a class="btn btn-secondary" href="#work">View experience</a>
-          </div>
-        </div>
-        <div class="hero-aside">
-          <aside class="headshot-frame" aria-label="Headshot placeholder">
-            <div class="headshot-placeholder">
-              <svg class="headshot-art" viewBox="0 0 400 500" fill="none" aria-hidden="true">
-                <rect width="400" height="500" fill="transparent"></rect>
-                <circle cx="200" cy="170" r="78" fill="currentColor" opacity="0.16"></circle>
-                <path d="M116 398c14-72 61-110 84-110s70 38 84 110" stroke="currentColor" stroke-width="22" stroke-linecap="round" opacity="0.28"></path>
-                <path d="M134 184c0-42 30-88 66-88 22 0 40 9 53 23 9 10 16 24 16 45 0 42-30 76-67 76-37 0-68-34-68-56Z" fill="currentColor" opacity="0.3"></path>
-                <path d="M128 177c5-55 40-99 92-99 20 0 37 6 51 17 18 14 31 38 33 72" stroke="currentColor" stroke-width="10" stroke-linecap="round" opacity="0.34"></path>
-              </svg>
-            </div>
-            <div class="headshot-note">
-              <span>Add professional headshot here</span>
-              <span>4:5 crop</span>
-            </div>
-          </aside>
-          <aside class="hero-card" aria-label="Career snapshot">
-            <div>
-              <div class="card-label">Career snapshot</div>
-              <div class="kicker" style="margin-top:.7rem;">Selected outcomes</div>
-            </div>
-            <div class="metric-grid">
-              <div class="metric"><strong>15+</strong><span>Years in health behavior, digital engagement, and content strategy</span></div>
-              <div class="metric"><strong>17%</strong><span>Growth in Women in Medicine engagement at Doximity</span></div>
-              <div class="metric"><strong>40+</strong><span>Original resilience resources built for OptionB.org</span></div>
-              <div class="metric"><strong>500K+</strong><span>Views generated across evidence-based resilience content</span></div>
-            </div>
-            <p style="color:var(--color-text-muted); position:relative; z-index:1;">Strengths include behavioral design, A/B and multivariate testing, mixed-methods research, stakeholder leadership, and healthcare-focused choice architecture.</p>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="section container" id="results">
-      <div class="section-head">
-        <div>
-          <div class="kicker">Capabilities</div>
-          <h2>Where strategy meets behavioral evidence.</h2>
-        </div>
-        <p>Rosemarie brings together experimentation, digital product thinking, health communication, and research rigor to build interventions that are credible, measurable, and useful in real healthcare contexts.</p>
-      </div>
-      <div class="expertise-grid">
-        <article class="panel"><h3>Behavioral design</h3><p>Nudges, choice architecture, and decision supports built for healthcare settings where trust, clarity, and timing matter.</p></article>
-        <article class="panel"><h3>Experimentation</h3><p>Randomized and quasi-experimental evaluations, A/B testing, and multivariate optimization for engagement and behavior change.</p></article>
-        <article class="panel"><h3>Content systems</h3><p>Evidence-based content ecosystems for clinicians, patients, and public audiences, aligned to measurable learning and engagement goals.</p></article>
-        <article class="panel"><h3>Cross-functional leadership</h3><p>Partnership across editorial, product, research, clinical, and executive teams to move strategy from idea to implementation.</p></article>
-      </div>
-    </section>
-
-    <section class="section container" id="work">
-      <div class="section-head">
-        <div>
-          <div class="kicker">Experience</div>
-          <h2>Selected roles and impact.</h2>
-        </div>
-        <p>A career shaped by digital health, patient communication, clinician engagement, and applied behavioral science across startup, nonprofit, and academic environments.</p>
-      </div>
-      <div class="timeline">
-        <article class="timeline-item">
-          <div>
-            <time>2020 — 2025</time>
-            <div class="meta">Doximity · Senior Editor</div>
-          </div>
-          <div>
-            <h3>Behavioral engagement for clinician audiences</h3>
-            <ul>
-              <li>Designed behavioral-insights-informed A/B and multivariate tests to optimize clinician engagement.</li>
-              <li>Improved Women in Medicine engagement by 17% through targeted community-building and user-centered design.</li>
-              <li>Built executive-facing recommendations from survey data, engagement trends, and advisory board insight.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div>
-            <time>2017 — 2019</time>
-            <div class="meta">OptionB.org · Education &amp; Content Lead</div>
-          </div>
-          <div>
-            <h3>Resilience content with measurable reach</h3>
-            <ul>
-              <li>Designed a digital content ecosystem that produced 40+ original resources.</li>
-              <li>Helped drive 500K+ views and 70% year-over-year growth through audience-centered strategy.</li>
-              <li>Ran user research and coordinated multidisciplinary expert contributors to maintain rigor and relevance.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div>
-            <time>2014 — 2017</time>
-            <div class="meta">University of Michigan · Health Behavioralist</div>
-          </div>
-          <div>
-            <h3>Digital interventions for patient behavior change</h3>
-            <ul>
-              <li>Supported web and mobile behavioral health interventions using randomized and quasi-experimental evaluation.</li>
-              <li>Translated clinical concepts into accessible actions across multiple specialties and patient populations.</li>
-              <li>Contributed to content strategy for a breast cancer companion app later profiled in the Wall Street Journal.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div>
-            <time>2009 — 2014</time>
-            <div class="meta">HealthMedia &amp; MHealthy</div>
-          </div>
-          <div>
-            <h3>Foundations in personalized health communication</h3>
-            <ul>
-              <li>Built tailored coaching content, educational campaigns, and behavioral messaging logic for wellness and self-management.</li>
-              <li>Worked across behavioral science, product, software, provider, and benefits teams to ship practical interventions.</li>
-              <li>Grounded content and program design in evidence, scientific validation, and guideline-concordant care.</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container" id="how-i-work">
-      <div class="section-head">
-        <div>
-          <div class="kicker">How I work</div>
-          <h2>From behavioral diagnosis to content, experiments, and outcomes.</h2>
-        </div>
-        <p class="process-intro">These patterns show up across different kinds of work, whether I am supporting patients, clinicians, or product teams.</p>
-      </div>
-      <div class="how-grid">
-        <article class="timeline-item">
-          <div>
-            <time>Behavioral diagnosis</time>
-            <div class="meta">Behavioral design exercise for a neighborhood platform</div>
-          </div>
-          <div>
-            <h3>Start with the choice environment, not just the interface.</h3>
-            <ul>
-              <li>I map the end-to-end path a user takes to complete a behavior, looking for decision points, drop-offs, and the moment intent is most likely to fail.</li>
-              <li>In one exercise, that meant tracing the path from a positive offline experience with a local business to the moment a neighbor tries to recommend that business digitally and gets stuck.</li>
-              <li>I distinguish between upstream choice-architecture problems and downstream friction, then prioritize the change that reshapes the initial decision rather than only smoothing later steps.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div>
-            <time>Co-design and content systems</time>
-            <div class="meta">Digital sexual health program at an academic research center</div>
-          </div>
-          <div>
-            <h3>Use research and co-design to shape content and flows.</h3>
-            <ul>
-              <li>I work with advisory boards, subject-matter experts, and end users to understand real experiences, language, and mental models before locking content.</li>
-              <li>On a digital sexual health project for young adults, that included partnering with a youth advisory board to define session themes, key messages, and example content and scenarios.</li>
-              <li>I turn those inputs into structured content systems—session outlines, activities, and decision-tree style interactions—that support both education and behavior change.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div>
-            <time>Evaluation and iteration</time>
-            <div class="meta">Digital interventions and content pilots</div>
-          </div>
-          <div>
-            <h3>Design measurement into the work from the start.</h3>
-            <ul>
-              <li>I prefer to build evaluation into interventions rather than treat it as an afterthought.</li>
-              <li>In past projects, that has meant using randomized and quasi-experimental designs, usability sessions, and qualitative feedback to understand not only whether something worked, but why.</li>
-              <li>Those findings then feed back into content, flows, and stakeholder recommendations, so the work becomes more effective over time.</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container">
-      <div class="project-grid">
-        <article class="panel">
-          <div class="kicker">Case study lens</div>
-          <h3>Clinician engagement optimization</h3>
-          <p>Behavioral hypotheses, test design, audience segmentation, and analytics-led iteration for professional audiences navigating high information load.</p>
-        </article>
-        <article class="panel">
-          <div class="kicker">Case study lens</div>
-          <h3>Evidence-based resilience resources</h3>
-          <p>Research translation, editorial systems, and growth strategy that expanded reach while preserving scientific credibility.</p>
-        </article>
-        <article class="panel">
-          <div class="kicker">Case study lens</div>
-          <h3>Patient-facing digital interventions</h3>
-          <p>Applied behavioral science for screening, self-management, and treatment decision support in real-world healthcare journeys.</p>
-        </article>
-        <aside class="quote">
-          <p>Behavior change works best when the science is rigorous, the experience is usable, and the decision arrives at the right moment.</p>
-          <small>Approach shaped by digital health, behavioral science, and healthcare communication.</small>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section container" id="about">
-      <div class="section-head">
-        <div>
-          <div class="kicker">About</div>
-          <h2>Education, focus, and working style.</h2>
-        </div>
-        <p>Rosemarie’s background combines public health training with years of applied work in healthcare communication, digital intervention design, and program strategy.</p>
-      </div>
-      <div class="about-grid">
-        <article class="panel">
-          <h3>Education</h3>
-          <div class="list" role="list">
-            <div><span>MPH, Health Behavior &amp; Health Education</span><span>University of Michigan</span></div>
-            <div><span>BA, Interdisciplinary Natural Sciences — Biology</span><span>University of South Florida</span></div>
-          </div>
-        </article>
-        <article class="panel">
-          <h3>Professional profile</h3>
-          <div class="list" role="list">
-            <div><span>Based in</span><span>Denver, USA</span></div>
-            <div><span>Best known for</span><span>Behavioral insights, digital health, experimentation</span></div>
-            <div><span>Additional experience</span><span>Project management and behavioral research support</span></div>
-            <div><span>Ideal collaborations</span><span>Health tech, behavioral science consulting, patient engagement</span></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container" id="contact">
-      <div class="contact-card">
-        <article class="panel">
-          <div class="kicker">Contact</div>
-          <h2 style="margin-top:.5rem;">Open to conversations about behavioral science, digital health, and strategic content work.</h2>
-          <p style="margin-top:1rem; color:var(--color-text-muted);">This site can be expanded with deeper case studies, writing samples, or a downloadable resume. For now, it is structured as a clean, recruiter-friendly portfolio homepage.</p>
-        </article>
-        <aside class="contact-links" aria-label="Contact links">
-          <a href="mailto:rosemariepitsch@gmail.com">rosemariepitsch@gmail.com</a>
-          <a href="tel:+17347172976">(734) 717-2976</a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn profile</a>
-        </aside>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer container">
-    <p>Designed as a polished personal portfolio with dark mode, responsive layout, and concise recruiter-facing storytelling.</p>
-  </footer>
-
-  <script>
-    (function () {
-      const root = document.documentElement;
-      const button = document.querySelector('[data-theme-toggle]');
-      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      const renderIcon = () => {
-        button.innerHTML = theme === 'dark'
-          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"/></svg>'
-          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>';
-        button.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-      };
-      root.setAttribute('data-theme', theme);
-      renderIcon();
-      button.addEventListener('click', function () {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', theme);
-        renderIcon();
-      });
-    }());
-  </script>
-</body>
-</html>
+    .capabilities-head { display: flex; align-items: center; gap: var(--space-5); margin-bottom: var(--space-5); }
+    .capabilities-head-text { flex: 1; }
+    .capabilities-photo { width: 11rem; height: 11rem; border-radius: var(--radius-lg); object-fit: cover; object-position: center center; flex-shrink: 0; box-shadow: var(--shadow-
+1Password menu is available. Press down arrow to select.
